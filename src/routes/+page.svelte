@@ -27,14 +27,16 @@
 					<a href={url} class="row__url">{url.replace(/https?:\/\//, '')}</a>
 					<span class="row__affiliations">
 						{affiliations
-							.map(
-								(a) =>
+							.map((a) => {
+								const majorString = Array.isArray(a.major) ? a.major.join(' + ') : a.major;
+								return (
 									a.type +
 									', ' +
-									a.major +
+									majorString +
 									" '" +
 									(a.yearOfCompletion % 100).toString().padStart(2, '0')
-							)
+								);
+							})
 							.join(' / ')}
 					</span>
 				</span>

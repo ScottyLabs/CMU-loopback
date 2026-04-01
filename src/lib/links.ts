@@ -1,3 +1,4 @@
+// If you have multiple majors, leave them in an array!
 const users: UserLink[] = [
 	{
 		name: 'Eric Xu',

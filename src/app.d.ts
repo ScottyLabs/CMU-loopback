@@ -17,7 +17,7 @@ declare global {
 	interface Affiliation {
 		type: 'undergrad' | 'phd' | 'masters';
 		yearOfCompletion: number;
-		major: string | string[]; // string[] for all you tryhards
+		major: string | string[]; // string[] for all you tryhards :P
 	}
 }
 
