@@ -17,3 +17,10 @@ Want to join our webring of personal websites? Add the following snippet somewhe
 	>
 </div>
 ```
+
+## Local development
+
+`pnpm i`
+`pnpm dev`
+
+This project uses Svelte, because it's honestly kinda goated for small-scale projects like this one.
