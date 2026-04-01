@@ -2,7 +2,7 @@
 
 ## ScottyLabs' first webring!
 
-Want to join our collection of personal websites? Add the following snippet somewhere on your homepage and add your site + info to `src/lib/links.ts` in a PR. That's it!
+Want to join our webring of personal websites? Add the following snippet somewhere on your homepage and add your site + info to `src/lib/links.ts` in a PR. That's it!
 
 ```html
 <div>

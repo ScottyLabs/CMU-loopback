@@ -1,11 +1,10 @@
 <script lang="ts">
-	import decorImg from '$lib/images/decor.png';
 	const { data } = $props();
 </script>
 
 <svelte:head>
 	<title>CMU Loopback</title>
-	<meta name="description" content="Svelte demo app" />
+	<meta name="CMU Loopback" content="A ScottyLabs webring" />
 </svelte:head>
 
 <section class="container">
@@ -47,7 +46,6 @@
 		</div>
 	</div>
 </section>
-<img src={decorImg} alt="" class="decoration" />
 
 <style>
 	h1 {
@@ -65,16 +63,7 @@
 		margin-top: 15px;
 		color: black;
 	}
-	.refresh {
-		font-size: 16px;
-		color: var(--gray-600);
-	}
-	.decoration {
-		position: absolute;
-		bottom: 0;
-		right: 0;
-		height: 400px;
-	}
+
 	.row-container {
 		margin-top: 50px;
 		--line-width: 3px;
@@ -111,5 +100,14 @@
 	}
 	.row--last {
 		font-size: 16px;
+	}
+	@media screen and (width<=700px) {
+		h1 {
+			font-size: 30px;
+			margin-top: 30px;
+		}
+		h2 {
+			font-size: 20px;
+		}
 	}
 </style>

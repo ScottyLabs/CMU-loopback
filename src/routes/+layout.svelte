@@ -1,5 +1,6 @@
 <script lang="ts">
 	import './layout.css';
+	import decorImg from '$lib/images/decor.png';
 
 	let { children } = $props();
 </script>
@@ -16,6 +17,7 @@
 			</p>
 		</div>
 	</footer>
+	<img src={decorImg} alt="" class="decoration" />
 </div>
 
 <style>
@@ -25,11 +27,30 @@
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: max(500px, 100vh);
+		min-height: max(300px, 100vh);
 		position: relative;
+		gap: 20px;
 	}
 	footer {
 		font-family: 'Fira Mono';
 		padding: 20px 0;
+		font-size: 18px;
+	}
+
+	.decoration {
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		height: min(50%, 400px);
+	}
+	@media screen and (width<=800px) {
+		footer {
+			font-size: 16px;
+		}
+	}
+	@media screen and (width<=400px) {
+		.decoration {
+			right: -150px;
+		}
 	}
 </style>
