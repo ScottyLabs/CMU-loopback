@@ -20,6 +20,17 @@ const users: UserLink[] = [
 				yearOfCompletion: 2028
 			}
 		]
+	},
+	{
+		name: 'Mark Fan',
+		url: 'https://arom1a.com',
+		affiliations: [
+			{
+				type: 'undergrad',
+				major: 'CS & Math',
+				yearOfCompletion: 2029
+			}
+		]
 	}
 ];
 // state in a stateless backend? how peculiar. I must inquire about this further with my manager with haste!

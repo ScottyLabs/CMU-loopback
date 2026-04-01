@@ -42,7 +42,7 @@
 		<div class="row row--last">
 			<div class="row__decoration"></div>
 			CMU Student or Alum? Add your site&nbsp;
-			<a href="https://github.com/ScottyLabs/CMU-loopback">here!</a>
+			<a href="https://github.com/ScottyLabs/CMU-loopback/blob/main/src/lib/links.ts">here!</a>
 		</div>
 	</div>
 </section>
