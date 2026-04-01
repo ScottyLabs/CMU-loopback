@@ -1,42 +1,21 @@
-# sv
+# CMU Loopback
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+ScottyLabs' first webring!
 
-## Creating a project
+Want to join our collection of personal websites?
 
-If you're seeing this, you've probably already done this step. Congrats!
+Add the following snippet somewhere on your homepage and add your site to `src/lib/links.ts` in a PR. That's it!
 
-```sh
-# create a new project
-npx sv create my-app
+```html
+<div>
+	<a href="https://loopback.scottylabs.org/redirect?site=[the url you put into links.ts]&dir=prev"
+		>←</a
+	>
+	<a href="https://loopback.scottylabs.org">
+		<img src="https://loopback.scottylabs.org/webring.svg" alt="" />
+	</a>
+	<a href="https://loopback.scottylabs.org/redirect?site=[the url you put into links.ts]&dir=next"
+		>→</a
+	>
+</div>
 ```
-
-To recreate this project with the same configuration:
-
-```sh
-# recreate this project
-pnpm dlx sv@0.13.1 create --template demo --types ts --add prettier vitest="usages:unit,component" --install pnpm .
-```
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```sh
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
-
-## Building
-
-To create a production version of your app:
-
-```sh
-npm run build
-```
-
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.

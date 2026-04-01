@@ -27,14 +27,16 @@
 				<span>
 					<a href={url} class="row__url">{url.replace(/https?:\/\//, '')}</a>
 					<span class="row__affiliations">
-						{affiliations.map(
-							(a) =>
-								a.type +
-								', ' +
-								a.major +
-								" '" +
-								(a.yearOfCompletion % 100).toString().padStart(2, '0')
-						)}
+						{affiliations
+							.map(
+								(a) =>
+									a.type +
+									', ' +
+									a.major +
+									" '" +
+									(a.yearOfCompletion % 100).toString().padStart(2, '0')
+							)
+							.join(' / ')}
 					</span>
 				</span>
 			</div>{/each}
