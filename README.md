@@ -1,6 +1,6 @@
 # CMU Loopback
 
-## ScottyLabs' first webring!
+## ScottyLabs' first webring!ewf
 
 Want to join our collection of personal websites? Add the following snippet somewhere on your homepage and add your site + info to `src/lib/links.ts` in a PR. That's it!
 
