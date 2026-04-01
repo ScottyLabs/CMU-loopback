@@ -13,7 +13,11 @@
 	--red-700: hsl(0, 75%, 42%);
 	--red-900: hsl(0, 75%, 22%);
 }
-
+@media screen and (width<=780px) {
+	:root {
+		--global-x-padding: 16px;
+	}
+}
 body {
 	min-height: 100vh;
 	margin: 0;

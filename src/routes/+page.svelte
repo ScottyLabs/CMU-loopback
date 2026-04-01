@@ -42,7 +42,8 @@
 			</div>{/each}
 		<div class="row row--last">
 			<div class="row__decoration"></div>
-			CMU Student or Alum? Add your site here!
+			CMU Student or Alum? Add your site&nbsp;
+			<a href="https://github.com/ScottyLabs/CMU-loopback">here!</a>
 		</div>
 	</div>
 </section>
