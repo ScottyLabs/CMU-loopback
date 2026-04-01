@@ -25,7 +25,8 @@
 	.app {
 		display: flex;
 		flex-direction: column;
-		min-height: 100vh;
+		min-height: max(500px, 100vh);
+		position: relative;
 	}
 	footer {
 		font-family: 'Fira Mono';
