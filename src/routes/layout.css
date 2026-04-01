@@ -25,3 +25,7 @@ body {
 	margin: auto;
 	padding-inline: var(--global-x-padding);
 }
+
+a {
+	color: inherit;
+}
