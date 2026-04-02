@@ -16,7 +16,7 @@
 	</h1>
 	<h2>
 		A <a href="https://en.wikipedia.org/wiki/Webring" target="_blank">webring</a> for the tech talent
-		at Carnegie Mellon University, today and beyond
+		@ Carnegie Mellon University, today and beyond
 	</h2>
 
 	<div class="row-container">
