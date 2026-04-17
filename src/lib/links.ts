@@ -27,7 +27,7 @@ const users: UserLink[] = [
 		affiliations: [
 			{
 				type: 'undergrad',
-				major: 'CS & Math',
+				major: ['CS', 'Math'],
 				yearOfCompletion: 2029
 			}
 		]
