@@ -3,20 +3,19 @@
 </script>
 
 <svelte:head>
-	<title>CMU Loopback</title>
-	<meta name="CMU Loopback" content="A ScottyLabs webring" />
+	<title>CMU.dev</title>
+	<meta name="CMU.dev" content="A ScottyLabs webring" />
 </svelte:head>
 
 <section class="container">
 	<h1>
-		CMU<span style="color:var(--gray-600)">::</span><span style="color:var(--red-700)"
-			>Loopback</span
-		>
+		<span class="wordmark__mark">CMU.dev</span>
+		<span class="wordmark__accent">CMU.developers</span>
 		<!-- <span class="refresh"> (order refreshes every week) </span> -->
 	</h1>
 	<h2>
 		A <a href="https://en.wikipedia.org/wiki/Webring" target="_blank">webring</a> for the tech talent
-		@ Carnegie Mellon University, today and beyond
+		@ Carnegie Mellon University, today and tomorrow
 	</h2>
 
 	<div class="row-container">
@@ -42,72 +41,106 @@
 				</span>
 			</div>{/each}
 		<div class="row row--last">
-			<div class="row__decoration"></div>
 			CMU Student or Alum? Add your site&nbsp;
-			<a href="https://github.com/ScottyLabs/CMU-loopback/blob/main/src/lib/links.ts">here!</a>
+			<a href="https://github.com/ScottyLabs/CMU-loopback">here!</a>
 		</div>
 	</div>
 </section>
 
 <style>
-	h1 {
-		font-size: 40px;
-		font-weight: 300;
-		margin-top: 50px;
-		font-family: var(--font-heading);
-		margin-bottom: 0;
+	section {
+		font-family: var(--font-sans);
 	}
+	h1 {
+		margin-top: 70px;
+		font-size: 40px;
+		font-weight: 700;
+		margin-bottom: 0;
+		color: var(--green-400);
+		position: relative;
+	}
+	@property --reveal-amt {
+		syntax: '<percentage>';
+		initial-value: 0%;
+		inherits: false;
+	}
+
+	.wordmark__mark {
+		position: absolute;
+		left: 0;
+		top: -0.2em;
+		background-color: var(--green-400);
+		color: var(--gray-950);
+		padding-top: 0.2em;
+		mask-image: linear-gradient(
+			to right,
+			black 0%,
+			black var(--reveal-amt),
+			transparent var(--reveal-amt)
+		);
+		animation: 1s reveal forwards cubic-bezier(0, 0, 0.06, 0.99);
+		animation-delay: 0.3s;
+	}
+	@keyframes reveal {
+		100% {
+			--reveal-amt: 100%;
+		}
+	}
+
 	h2 {
-		font-size: 22px;
-		font-weight: 600;
+		font-size: 20px;
+		font-weight: 300;
 		max-width: 700px;
-		line-height: 1.5;
-		margin-top: 15px;
-		color: black;
+		line-height: 1.4;
+		margin-top: 18px;
+		color: var(--gray-100);
 	}
 
 	.row-container {
-		margin-top: 50px;
-		--line-width: 3px;
-		border-left: var(--line-width) solid var(--gray-300);
+		margin-top: 45px;
 		display: flex;
 		flex-direction: column;
-		gap: 25px;
+		gap: 18px;
 	}
 	.row {
 		position: relative;
 		display: flex;
+		font-size: 20px;
 		.row__decoration {
-			margin-right: 15px;
-			height: var(--line-width);
-			width: 15px;
-			background-color: var(--gray-300);
-			align-self: center;
-			border-top-right-radius: 5px;
-			border-bottom-right-radius: 5px;
+			align-self: stretch;
+			width: 4px;
+			background-color: var(--green-400);
+			margin-left: -10px;
+			margin-right: 8px;
+			opacity: 0;
+			transition: 0.2s opacity;
 		}
-		font-size: 18px;
+
 		.row__url {
-			font-weight: bold;
-			color: var(--red-700);
+			font-weight: 700;
+			color: var(--gray-100);
 			text-decoration: none;
 			&:visited {
-				color: var(--red-900);
+				color: var(--gray-400);
 			}
 		}
 		.row__affiliations {
+			margin-left: 6px;
 			font-size: 16px;
-			color: var(--gray-600);
+			color: var(--gray-200);
 		}
 	}
 	.row--last {
+		margin-top: 6px;
 		font-size: 16px;
+		color: var(--gray-200);
 	}
 	@media screen and (width<=700px) {
 		h1 {
+			margin-top: 40px;
 			font-size: 30px;
-			margin-top: 30px;
 		}
+
 		h2 {
 			font-size: 20px;
 		}
