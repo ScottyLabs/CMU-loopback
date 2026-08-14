@@ -1,6 +1,6 @@
 <script lang="ts">
 	import './layout.css';
-	import ringsImg from '$lib/images/ring2.png';
+	import ringsImg from '$lib/images/ring3.png';
 
 	let { children } = $props();
 </script>
@@ -41,13 +41,13 @@
 
 	.decoration {
 		position: fixed;
-		bottom: 70px;
-		right: 100px;
-		width: 130vw;
+		bottom: 120px;
+		right: 120px;
+		width: 70vw;
 		pointer-events: none;
 		user-select: none;
 		z-index: -1;
-		transform: translate(50%, 50%) scale(1.1) rotate3d(1, 0, 0, 75deg)
+		transform: translate(50%, 50%) scale(1.1) rotate3d(1, 0, 0, 0)
 			rotate(calc(var(--ring-rotate) * 0.1));
 		background-color: rgba(93, 217, 136, 0.483);
 		border-radius: 100%;

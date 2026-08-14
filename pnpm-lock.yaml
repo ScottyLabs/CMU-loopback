@@ -8,18 +8,15 @@ importers:
 
   .:
     dependencies:
-      '@fontsource-variable/bitter':
-        specifier: ^5.2.10
-        version: 5.2.10
-      '@fontsource-variable/merriweather':
-        specifier: ^5.2.6
-        version: 5.2.6
-      '@fontsource-variable/merriweather-sans':
-        specifier: ^5.2.7
-        version: 5.2.7
-      '@fontsource/adlam-display':
-        specifier: ^5.2.7
-        version: 5.2.7
+      '@fontsource-variable/mozilla-headline':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@fontsource-variable/mozilla-text':
+        specifier: ^5.3.0
+        version: 5.3.0
+      '@fontsource/geo':
+        specifier: ^5.3.0
+        version: 5.3.0
     devDependencies:
       '@fontsource/fira-mono':
         specifier: ^5.2.7
@@ -231,20 +228,17 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@fontsource-variable/bitter@5.2.10':
-    resolution: {integrity: sha512-OGvp+KEyqOq+4/20Y9vifBxSBnfxGiL/9qiSl9rOMZSRhEEbgAYBn+DKVPXIWSQQdawcYc975qE13ppRIcPI2Q==}
+  '@fontsource-variable/mozilla-headline@5.3.0':
+    resolution: {integrity: sha512-POvr5HAB4/xZxZYwaLhKEZYNOiufrWQAnnQesl1sYb7GYyXk6i1dWdIB3aLGsCCbNwYWGmFFDr41KLyFUjUY5w==}
 
-  '@fontsource-variable/merriweather-sans@5.2.7':
-    resolution: {integrity: sha512-G8dHD1h+rta75W/fARgD5eoGDVASv2rgx3wZwvMTuy+B0VSu+dNMJNUymIKVfMRMshBAYeQCprQICrEZ8l0xqg==}
-
-  '@fontsource-variable/merriweather@5.2.6':
-    resolution: {integrity: sha512-bHCDt99f/M48eUcFA86uh/oSPyn8r/ZxXR9l578wqLvjTwDzXx8A/XOAI05WfJ3LnH1rDufQX5RJwiZtbXUCkw==}
-
-  '@fontsource/adlam-display@5.2.7':
-    resolution: {integrity: sha512-tKTooGHJfR3G1xvP/3vl7p4PkDwsbdIGcowmJ0eLo3iqmOi5yBDKMwgvNdCpdrjLKtwRpX04Fbw4oTm3eQ6Bjg==}
+  '@fontsource-variable/mozilla-text@5.3.0':
+    resolution: {integrity: sha512-y/20d2T4/AXZ6ZlrKjKG0oTdcOVlaXwXBBMQmILky2oTAc39zvHKNjJ8x84gxXyJ9gqZ43h3QzrtvlNtNlRajQ==}
 
   '@fontsource/fira-mono@5.2.7':
     resolution: {integrity: sha512-wYrAn6i3nH6luqQBZxtWUpl4UTUvs9AEbEeZxksPMwIqyjRRaxHTNW3c2VfM50gabS2IS7pT8lVWS2USB4ukYA==}
+
+  '@fontsource/geo@5.3.0':
+    resolution: {integrity: sha512-1rBQfkW/xykM50SPr/crDhIoP0xloHjDueKaJdnIP5YWq0AjOJMekk+bN7/YdU/y48Q2j1KQ+2YnPuRoJgKy5g==}
 
   '@jridgewell/gen-mapping@0.3.13':
     resolution: {integrity: sha512-2kkt/7niJ6MgEPxF0bYdQ6etZaA+fQvDcLKckhy1yIQOzaoKjBBjSj63/aLVjYE3qhRt5dvM+uUyfCg6UKCBbA==}
@@ -1003,15 +997,13 @@ snapshots:
   '@esbuild/win32-x64@0.27.4':
     optional: true
 
-  '@fontsource-variable/bitter@5.2.10': {}
+  '@fontsource-variable/mozilla-headline@5.3.0': {}
 
-  '@fontsource-variable/merriweather-sans@5.2.7': {}
-
-  '@fontsource-variable/merriweather@5.2.6': {}
-
-  '@fontsource/adlam-display@5.2.7': {}
+  '@fontsource-variable/mozilla-text@5.3.0': {}
 
   '@fontsource/fira-mono@5.2.7': {}
+
+  '@fontsource/geo@5.3.0': {}
 
   '@jridgewell/gen-mapping@0.3.13':
     dependencies:

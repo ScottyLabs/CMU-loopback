@@ -40,9 +40,8 @@
 		]
 	},
 	"dependencies": {
-		"@fontsource-variable/bitter": "^5.2.10",
-		"@fontsource-variable/merriweather": "^5.2.6",
-		"@fontsource-variable/merriweather-sans": "^5.2.7",
-		"@fontsource/adlam-display": "^5.2.7"
+		"@fontsource-variable/mozilla-headline": "^5.3.0",
+		"@fontsource-variable/mozilla-text": "^5.3.0",
+		"@fontsource/geo": "^5.3.0"
 	}
 }
