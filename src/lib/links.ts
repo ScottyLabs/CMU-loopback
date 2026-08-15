@@ -1,3 +1,5 @@
+import Rand from 'rand-seed';
+
 // If you have multiple majors, leave them in an array!
 const users: UserLink[] = (
 	[
@@ -14,7 +16,7 @@ const users: UserLink[] = (
 		},
 		{
 			name: 'Anish Pallati',
-			url: 'https://anish.land',
+			url: 'anish.land',
 			affiliations: [
 				{
 					type: 'Undergrad',
@@ -36,25 +38,23 @@ const users: UserLink[] = (
 		}
 	] satisfies UserLink[]
 ).map((user) => ({ ...user, url: user.url.replace(/https?:\/\//, '') }));
-// state in a stateless backend? how peculiar. I must inquire about this further with my manager with haste!
-const usersOrdered = users;
-let lastShuffledTimestamp = 0;
-const shuffleInterval = 1000 * 60 * 60 * 24; // 1 day
+
+const MS_IN_DAY = 1000 * 60 * 60 * 24;
 /**
- * Shuffles users if that last shuffle happened over a day ago
+ * Shuffles users based on deterministic seed that updates once per day.
  */
 function shuffleUsers() {
-	if (Date.now() - lastShuffledTimestamp < shuffleInterval) {
-		return;
+	const seed = Math.floor(+new Date() / MS_IN_DAY).toString();
+	const randGenerator = new Rand(seed);
+
+	const randomizedUsers = [...users]; // we don't want to mutate the original ordering
+	for (let i = 0; i < randomizedUsers.length; i++) {
+		let j = Math.floor(randGenerator.next() * (randomizedUsers.length - i)) + i;
+		[randomizedUsers[i], randomizedUsers[j]] = [randomizedUsers[j], randomizedUsers[i]];
 	}
-	for (let i = 0; i < usersOrdered.length; i++) {
-		let j = Math.floor(Math.random() * (usersOrdered.length - i)) + i;
-		[usersOrdered[i], usersOrdered[j]] = [usersOrdered[j], usersOrdered[i]];
-	}
-	lastShuffledTimestamp = Date.now();
+	return randomizedUsers;
 }
 
 export function getUsers() {
-	shuffleUsers();
-	return usersOrdered;
+	return shuffleUsers();
 }

@@ -10,7 +10,7 @@ declare global {
 	}
 	interface UserLink {
 		name: string;
-		/** Important to prepend url with https:// */
+		/** url without the https:// (when inputting manually, can choose to add or omit) */
 		url: string;
 		affiliations: [Affiliation, ...Affiliation[]]; // require non-empty
 	}
