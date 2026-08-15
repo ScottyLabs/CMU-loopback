@@ -18,15 +18,21 @@ Want to join the CMU webring? Add the following snippet somewhere on your homepa
 </div>
 ```
 
-THe icon endpoint returns an svg, whose color and style can be customized with query parameters.
+The icon endpoint returns an svg, whose color and style can be customized with query parameters.
 
 eg.
 
-`https://loopback.scottylabs.org/icon.svg?color=AAAAAA`
+`https://loopback.scottylabs.org/icon.svg?color=8EC1B8`
+
+for
+![](https://loopback.scottylabs.org/icon.svg?color=8EC1B8)
 
 OR
 
-`https://loopback.scottylabs.org/icon.svg?color=AAAAAA&condensed=true`
+`https://loopback.scottylabs.org/icon.svg?color=8EC1B8&condensed=true`
+
+for
+![](https://loopback.scottylabs.org/icon.svg?color=8EC1B8&condensed=true)
 
 ## Local development
 
