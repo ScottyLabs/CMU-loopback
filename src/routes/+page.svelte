@@ -78,6 +78,7 @@
 		text-align: center;
 		position: sticky;
 		top: 0;
+		z-index: 99;
 	}
 
 	.card__subtitle {
