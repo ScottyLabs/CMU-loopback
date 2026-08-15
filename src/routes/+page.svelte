@@ -93,9 +93,9 @@
 			position: relative;
 			& > :global(div > div)::after {
 				width: 100%;
-				height: 2px;
+				height: 1px;
 				position: absolute;
-				bottom: 0px;
+				bottom: 1px;
 				left: 0;
 				content: '';
 				background: var(--text);
