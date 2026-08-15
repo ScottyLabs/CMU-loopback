@@ -1,5 +1,26 @@
 <script lang="ts">
 	const { data } = $props();
+	import { gsap } from 'gsap';
+	import { SplitText } from 'gsap/all';
+	gsap.registerPlugin(SplitText);
+
+	$effect(() => {
+		const split = SplitText.create('.card__subtitle', { type: 'lines,words', mask: 'words' });
+		gsap.from(split.words, {
+			duration: 0.8,
+			ease: 'power2.out',
+			y: 100, // animate from 100px below
+			autoAlpha: 0, // fade in from opacity: 0 and visibility: hidden
+			stagger: 0.03
+		});
+		gsap.from('.row, .join-row', {
+			clipPath: 'inset(0 100% 0 0)',
+			stagger: 0.15,
+			delay: 1.1,
+			duration: 0.8,
+			ease: 'cubic-bezier(0.785, 0.135, 0.15, 0.86)'
+		});
+	});
 </script>
 
 <svelte:head>
@@ -12,8 +33,9 @@
 	A <a
 		href="https://en.wikipedia.org/wiki/Webring"
 		target="_blank"
-		style="text-underline-offset: 3px;">webring</a
-	> for the tech talent @ Carnegie Mellon University, today and tomorrow.
+		style="text-underline-offset: 3px;"
+		>webring
+	</a> for the tech talent @ Carnegie Mellon University, today and tomorrow.
 </h2>
 
 <div class="row-container">
@@ -66,15 +88,29 @@
 		font-weight: 300;
 		padding-inline: var(--global-x-padding);
 		line-height: 1.4;
+		& a {
+			position: relative;
+			& > :global(div > div)::after {
+				width: 100%;
+				height: 2px;
+				position: absolute;
+				bottom: 0px;
+				left: 0;
+				content: '';
+				background: var(--text);
+			}
+		}
 	}
 	.row-container {
 		border-top: 1px solid var(--card-border);
 	}
+
 	.row {
 		border-bottom: 1px solid var(--card-border);
 		padding: 25px var(--global-x-padding);
 		display: block;
 		text-decoration: none;
+
 		.row__arrows {
 			display: inline-block;
 

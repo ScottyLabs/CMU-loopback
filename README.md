@@ -18,7 +18,7 @@ Want to join the CMU webring? Add the following snippet somewhere on your homepa
 </div>
 ```
 
-The icon endpoint returns an svg, whose color and style can be customized with query parameters.
+The icon endpoint returns an svg, whose color (default, black) and style can be customized with query parameters.
 
 eg.
 

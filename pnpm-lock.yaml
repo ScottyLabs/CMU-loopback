@@ -20,6 +20,9 @@ importers:
       '@fontsource/nanum-pen-script':
         specifier: ^5.3.0
         version: 5.3.0
+      gsap:
+        specifier: ^3.15.0
+        version: 3.15.0
       rand-seed:
         specifier: ^3.0.0
         version: 3.0.0
@@ -651,6 +654,9 @@ packages:
 
   function-bind@1.1.2:
     resolution: {integrity: sha512-7XHNxH7qX9xG5mIwxkhumTox/MIRNcOgDrxWsMt2pAr23WHp6MrRlN7FBSFpCpr+oVO0F744iUgR82nJMfG2SA==}
+
+  gsap@3.15.0:
+    resolution: {integrity: sha512-dMW4CWBTUK1AEEDeZc1g4xpPGIrSf9fJF960qbTZmN/QwZIWY5wgliS6JWl9/25fpTGJrMRtSjGtOmPnfjZB+A==}
 
   hasown@2.0.3:
     resolution: {integrity: sha512-ej4AhfhfL2Q2zpMmLo7U1Uv9+PyhIZpgQLGT1F9miIGmiCJIoCgSmczFdrc97mWT4kVY72KA+WnnhJ5pghSvSg==}
@@ -1391,6 +1397,8 @@ snapshots:
     optional: true
 
   function-bind@1.1.2: {}
+
+  gsap@3.15.0: {}
 
   hasown@2.0.3:
     dependencies:
