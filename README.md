@@ -9,14 +9,24 @@ Want to join the CMU webring? Add the following snippet somewhere on your homepa
 	<a href="https://loopback.scottylabs.org/redirect?site=[the url you put into links.ts]&dir=prev"
 		>←</a
 	>
-	<a href="https://loopback.scottylabs.org" style="color: [ADD A COLOR HERE]">
-		<img src="https://loopback.scottylabs.org/webring-transparent.svg" alt="" />
+	<a href="https://loopback.scottylabs.org">
+		<img src="https://loopback.scottylabs.org/icon.svg" alt="" />
 	</a>
 	<a href="https://loopback.scottylabs.org/redirect?site=[the url you put into links.ts]&dir=next"
 		>→</a
 	>
 </div>
 ```
+
+THe icon endpoint returns an svg, whose color and style can be customized with query parameters.
+
+eg.
+
+`https://loopback.scottylabs.org/icon.svg?color=AAAAAA`
+
+OR
+
+`https://loopback.scottylabs.org/icon.svg?color=AAAAAA&condensed=true`
 
 ## Local development
 
