@@ -61,6 +61,7 @@ main {
 	margin: auto;
 	background: var(--card-bg);
 	min-height: 100vh;
+	box-sizing: border-box;
 	padding-bottom: 40px;
 	&::before {
 		/* fills out the bottom part when you over-scroll the bottom */
