@@ -72,6 +72,7 @@
 		inset: 0;
 		background-image: url('../lib/images/circle.svg');
 		z-index: -200;
+		background-position: center;
 	}
 	.infinite-scroll {
 		--gap: 15px;
