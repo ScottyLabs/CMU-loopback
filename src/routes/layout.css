@@ -70,6 +70,7 @@ main {
 		height: 50dvh;
 		left: 50%;
 		max-width: var(--max-card-width);
+		width: 100vw;
 		transform: translate(-50%, 0);
 		bottom: 0;
 		right: 0;
@@ -85,6 +86,8 @@ main {
 		background-color: var(--card-bg-accent);
 		height: 50dvh;
 		left: 50%;
+		width: 100vw;
+
 		max-width: var(--max-card-width);
 		transform: translate(-50%, 0);
 		top: 0;

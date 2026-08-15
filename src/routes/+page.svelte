@@ -101,7 +101,8 @@
 		}
 	}
 	.join-row {
-		border: 1px solid var(--card-border);
+		border-top: 1px solid var(--card-border);
+		border-bottom: 1px solid var(--card-border);
 		padding: 20px var(--global-x-padding);
 		display: block;
 		margin-top: 40px;
