@@ -13,7 +13,7 @@
 		href="https://en.wikipedia.org/wiki/Webring"
 		target="_blank"
 		style="text-underline-offset: 3px;">webring</a
-	> for the tech talent @ Carnegie Mellon University, today and tomorrow
+	> for the tech talent @ Carnegie Mellon University, today and tomorrow.
 </h2>
 
 <div class="row-container">
@@ -41,6 +41,9 @@
 <a href="https://github.com/ScottyLabs/CMU-loopback" class="join-row">
 	++ CMU Student or Alum? Click here to add your site! ++
 </a>
+<div class="credits">
+	Made with ♥︎ by <a href="https://scottylabs.org" target="_blank">ScottyLabs</a>
+</div>
 
 <style>
 	.card__header {
@@ -113,6 +116,19 @@
 		text-decoration: none;
 		&:hover {
 			color: var(--text);
+		}
+	}
+	.credits {
+		display: none;
+		font-size: 18px;
+		font-family: var(--font-handwritten);
+		text-align: center;
+		margin-top: 40px;
+		color: var(--text);
+	}
+	@media screen and (width<=1000px) {
+		.credits {
+			display: block;
 		}
 	}
 </style>

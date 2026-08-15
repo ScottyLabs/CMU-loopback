@@ -117,4 +117,10 @@
 			transform: translate(calc(-50% - var(--gap) / 2), 0);
 		}
 	}
+
+	@media screen and (width<=1000px) {
+		footer {
+			display: none;
+		}
+	}
 </style>
