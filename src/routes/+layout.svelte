@@ -1,85 +1,120 @@
 <script lang="ts">
 	import './layout.css';
-	import ringsImg from '$lib/images/ring3.png';
-
+	import cirex from '../lib/images/shijima_1.png';
 	let { children } = $props();
 </script>
 
-<div class="app">
-	<main>
-		{@render children()}
-	</main>
-
+<main>
+	{@render children()}
+</main>
+<div class="circle-decor"></div>
+<div class="infinite-scroll infinite-scroll--top">
+	<div class="infinite-scroll__content">
+		{#each Array(90)}<span
+				><span style="color: var(--card-bg)">CMU.dev</span><span
+					style="color: var(--card-bg-accent)">elopers</span
+				></span
+			>{/each}
+	</div>
+</div>
+<div class="infinite-scroll infinite-scroll--bottom">
+	<div class="infinite-scroll__content">
+		{#each Array(90)}<span
+				><span style="color: var(--card-bg)">CMU.dev</span><span
+					style="color: var(--card-bg-accent)">elopers</span
+				></span
+			>{/each}
+	</div>
 	<footer>
-		<div class="container">
+		<div>
 			<p>
-				Made with ❤️ by <a href="https://scottylabs.org" target="_blank">ScottyLabs</a>
+				Made with ♥︎ by <a href="https://scottylabs.org" target="_blank">ScottyLabs</a>
 			</p>
 		</div>
+		<!-- <div style="display: flex; align-items: flex-end; gap: 5px">
+			<p>Designed by cirex</p>
+			<a href="https://cirex.dev">
+				<img src={cirex} class="cirex" alt="dweeb" />
+			</a>
+		</div> -->
 	</footer>
-	<img src={ringsImg} alt="" aria-hidden="true" class="decoration" />
 </div>
 
 <style>
-	main {
-		flex-grow: 1;
-	}
-	.app {
-		display: flex;
-		flex-direction: column;
-		min-height: max(300px, 100vh);
-		position: relative;
-		overflow: hidden;
-		gap: 20px;
-	}
+	/* z-index -1 is reserved for main::before and main::after (see layout.css), so all negative z-indices should be smaller than this  */
 	footer {
-		font-family: var(--font-sans);
-		opacity: 0.7;
-		padding: 20px 0;
 		font-size: 18px;
-	}
+		align-items: flex-end;
+		position: absolute;
 
-	.decoration {
+		top: 0;
+		transform: translate(0, -100%);
+		left: 20px;
+		right: 20px;
+		padding-bottom: 1px;
+		font-family: var(--font-handwritten);
+		color: var(--bg-stroke);
+		z-index: -5;
+		display: flex;
+		justify-content: space-between;
+		p {
+			padding-bottom: 10px;
+		}
+
+		.cirex {
+			width: 50px;
+			height: 70px;
+			display: block;
+		}
+	}
+	.circle-decor {
 		position: fixed;
-		bottom: 120px;
-		right: 120px;
-		width: 70vw;
-		pointer-events: none;
-		user-select: none;
-		z-index: -1;
-		transform: translate(50%, 50%) scale(1.1) rotate3d(1, 0, 0, 0)
-			rotate(calc(var(--ring-rotate) * 0.1));
-		background-color: rgba(93, 217, 136, 0.483);
-		border-radius: 100%;
-		animation: 100s linear rotate -7s infinite;
-		mask-image: conic-gradient(
-			from calc(-1 * var(--ring-rotate) - 100deg),
-			rgba(0, 0, 0, 0.581),
-			transparent 100%
-		);
+		inset: 0;
+		background-image: url('../lib/images/circle.svg');
+		z-index: -200;
 	}
-	@property --ring-rotate {
-		syntax: '<angle>';
-		initial-value: 0deg;
-		inherits: false;
-	}
-	@keyframes rotate {
-		to {
-			--ring-rotate: 3600deg;
-		}
-	}
+	.infinite-scroll {
+		--gap: 15px;
+		--scroll-duration: 120.67s;
+		position: fixed;
+		background-color: var(--bg);
 
-	@media screen and (width<=800px) {
-		footer {
-			font-size: 16px;
+		left: 0;
+		right: 0;
+		font-family: var(--font-blocky);
+
+		z-index: -100;
+		display: flex;
+		& > .infinite-scroll__content {
+			flex-shrink: 0;
+			display: flex;
+			padding-block: 7px;
+			font-weight: 500;
+			font-size: 18px;
+			gap: var(--gap);
+		}
+
+		&.infinite-scroll--top {
+			top: 0;
+			border-bottom: 1px solid var(--card-bg);
+			& > .infinite-scroll__content {
+				animation: slide var(--scroll-duration) infinite linear;
+				padding-top: 9px;
+			}
+		}
+		&.infinite-scroll--bottom {
+			bottom: 0;
+			border-top: 1px solid var(--card-bg);
+
+			& > .infinite-scroll__content {
+				animation: slide var(--scroll-duration) infinite linear reverse;
+				padding-bottom: 9px;
+			}
 		}
 	}
-	@media screen and (width<=450px) {
-		.decoration {
-			right: 50%;
-			bottom: 20%;
-			transform: translate(50%, 50%) scale(1.1) rotate(calc(var(--ring-rotate) * 0.1));
-			opacity: 0.5;
+	@keyframes slide {
+		to {
+			transform: translate(calc(-50% - var(--gap) / 2), 0);
 		}
 	}
 </style>

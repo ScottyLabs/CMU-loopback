@@ -42,6 +42,7 @@
 	"dependencies": {
 		"@fontsource-variable/mozilla-headline": "^5.3.0",
 		"@fontsource-variable/mozilla-text": "^5.3.0",
-		"@fontsource/geo": "^5.3.0"
+		"@fontsource/geo": "^5.3.0",
+		"@fontsource/nanum-pen-script": "^5.3.0"
 	}
 }

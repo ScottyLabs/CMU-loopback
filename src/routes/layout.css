@@ -1,17 +1,34 @@
 @import '@fontsource/geo';
 @import '@fontsource-variable/mozilla-headline/wght.css';
 @import '@fontsource-variable/mozilla-text/wght.css';
+@import '@fontsource/nanum-pen-script';
+
 :root {
 	--font-blocky: 'Geo', sans-serif;
 	--font-heading: 'Mozilla Headline Variable', sans-serif;
 	--font-text: 'Mozilla Text Variable', sans-serif;
-	--global-x-padding: 80px;
-	--gray-100: hsl(0, 0%, 95%); /* primary text, ~white on dark */
-	--gray-200: hsl(0, 0%, 84%); /* muted text (affiliations) */
-	--gray-400: hsl(0, 0%, 64%); /* muted text (affiliations) */
-	--gray-800: hsl(0, 0%, 27%);
-	--gray-950: #0f0f0f;
-	--green-400: #51f796;
+	--font-handwritten: 'Nanum Pen Script', cursive;
+
+	--global-x-padding: 27px;
+	--max-card-width: 500px;
+
+	--aqua-300: #8ec1b8;
+	--aqua-700: #23566c;
+	--ash-100: #dfdcd3;
+	--ash-200: hsl(41, 14%, 78%);
+	--ash-300: hsl(37, 24%, 65%);
+	--ash-400: hsl(37, 27%, 52%);
+	--silver-100: hsl(0, 0%, 84%);
+	--silver-700: hsl(0, 0%, 38%);
+
+	--card-bg: var(--aqua-700);
+	--card-bg-accent: var(--aqua-300);
+	--card-border: var(--ash-300);
+	--text: var(--silver-100);
+	--text-accent: var(--ash-300);
+	--text-muted: var(--ash-200);
+	--bg: var(--ash-100);
+	--bg-stroke: var(--silver-700);
 }
 @media screen and (width<=1000px) {
 	:root {
@@ -24,18 +41,54 @@
 	}
 }
 body {
-	min-height: 100vh;
 	margin: 0;
-	font-family: 'Merriweather Variable', sans-serif;
-	background-color: var(--gray-950);
-	color: var(--gray-100);
-}
-.container {
-	margin: auto;
-	padding-inline: var(--global-x-padding);
+	background-color: var(--bg);
+	isolation: isolate;
 }
 
 a {
 	color: inherit;
-	text-underline-offset: 3px;
+}
+h1,
+h2,
+p {
+	margin: 0;
+}
+main {
+	position: relative;
+	pointer-events: visible;
+	max-width: var(--max-card-width);
+	margin: auto;
+	background: var(--card-bg);
+	min-height: 100vh;
+	padding-bottom: 40px;
+	&::before {
+		/* fills out the bottom part when you over-scroll the bottom */
+		content: '';
+		position: fixed;
+		background-color: var(--card-bg);
+		height: 50dvh;
+		left: 50%;
+		max-width: var(--max-card-width);
+		transform: translate(-50%, 0);
+		bottom: 0;
+		right: 0;
+		z-index: -1;
+	}
+	&::after {
+		/* fills out the top part when you over-scroll the top */
+		content: 'Designed by Eric X. :3';
+		text-align: center;
+		font-family: var(--font-blocky);
+		position: fixed;
+		padding-top: 30px;
+		background-color: var(--card-bg-accent);
+		height: 50dvh;
+		left: 50%;
+		max-width: var(--max-card-width);
+		transform: translate(-50%, 0);
+		top: 0;
+		right: 0;
+		z-index: -1;
+	}
 }

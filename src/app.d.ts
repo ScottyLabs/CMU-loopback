@@ -15,7 +15,7 @@ declare global {
 		affiliations: [Affiliation, ...Affiliation[]]; // require non-empty
 	}
 	interface Affiliation {
-		type: 'undergrad' | 'phd' | 'masters';
+		type: 'Undergrad' | 'PhD' | 'Masters';
 		yearOfCompletion: number;
 		major: string | string[];
 	}

@@ -1,39 +1,107 @@
 // If you have multiple majors, leave them in an array!
-const users: UserLink[] = [
-	{
-		name: 'Eric Xu',
-		url: 'https://cirex.dev',
-		affiliations: [
-			{
-				type: 'undergrad',
-				major: 'CS',
-				yearOfCompletion: 2027
-			}
-		]
-	},
-	{
-		name: 'Anish Pallati',
-		url: 'https://anish.land',
-		affiliations: [
-			{
-				type: 'undergrad',
-				major: 'Math',
-				yearOfCompletion: 2028
-			}
-		]
-	},
-	{
-		name: 'Mark Fan',
-		url: 'https://arom1a.com',
-		affiliations: [
-			{
-				type: 'undergrad',
-				major: ['CS', 'Math'],
-				yearOfCompletion: 2029
-			}
-		]
-	}
-];
+const users: UserLink[] = (
+	[
+		{
+			name: 'Eric Xu',
+			url: 'https://cirex.dev',
+			affiliations: [
+				{
+					type: 'Undergrad',
+					major: 'CS',
+					yearOfCompletion: 2027
+				}
+			]
+		},
+		{
+			name: 'Anish Pallati',
+			url: 'https://anish.land',
+			affiliations: [
+				{
+					type: 'Undergrad',
+					major: 'Math',
+					yearOfCompletion: 2028
+				}
+			]
+		},
+		{
+			name: 'Mark Fan',
+			url: 'https://arom1a.com',
+			affiliations: [
+				{
+					type: 'Undergrad',
+					major: ['CS', 'Math'],
+					yearOfCompletion: 2029
+				}
+			]
+		},
+		{
+			name: 'Mark Fan',
+			url: 'https://arom1a.com',
+			affiliations: [
+				{
+					type: 'Undergrad',
+					major: ['CS', 'Math'],
+					yearOfCompletion: 2029
+				}
+			]
+		},
+		{
+			name: 'Mark Fan',
+			url: 'https://arom1a.com',
+			affiliations: [
+				{
+					type: 'Undergrad',
+					major: ['CS', 'Math'],
+					yearOfCompletion: 2029
+				}
+			]
+		},
+		{
+			name: 'Mark Fan',
+			url: 'https://arom1a.com',
+			affiliations: [
+				{
+					type: 'Undergrad',
+					major: ['CS', 'Math'],
+					yearOfCompletion: 2029
+				}
+			]
+		},
+		{
+			name: 'Mark Fan',
+			url: 'https://arom1a.com',
+			affiliations: [
+				{
+					type: 'Undergrad',
+					major: ['CS', 'Math'],
+					yearOfCompletion: 2029
+				}
+			]
+		},
+		{
+			name: 'Mark Fan',
+			url: 'https://arom1a.com',
+			affiliations: [
+				{
+					type: 'Undergrad',
+					major: ['CS', 'Math'],
+					yearOfCompletion: 2029
+				}
+			]
+		},
+		{
+			name: 'Mark Fan',
+			url: 'https://arom1a.com',
+			affiliations: [
+				{
+					type: 'Undergrad',
+					major: ['CS', 'Math'],
+					yearOfCompletion: 2029
+				}
+			]
+		}
+	] satisfies UserLink[]
+).map((user) => ({ ...user, url: user.url.replace(/https?:\/\//, '') }));
 // state in a stateless backend? how peculiar. I must inquire about this further with my manager with haste!
 const usersOrdered = users;
 let lastShuffledTimestamp = 0;

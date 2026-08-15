@@ -7,142 +7,111 @@
 	<meta name="CMU.dev" content="A ScottyLabs webring" />
 </svelte:head>
 
-<section class="container">
-	<h1>
-		<span class="wordmark__mark">CMU.dev</span>
-		<span class="wordmark__accent">CMU.developers</span>
-		<!-- <span class="refresh"> (order refreshes every week) </span> -->
-	</h1>
-	<h2>
-		A <a href="https://en.wikipedia.org/wiki/Webring" target="_blank">webring</a> for the tech talent
-		@ Carnegie Mellon University, today and tomorrow
-	</h2>
+<h1 class="card__header">CMU.DEV</h1>
+<h2 class="card__subtitle">
+	A <a
+		href="https://en.wikipedia.org/wiki/Webring"
+		target="_blank"
+		style="text-underline-offset: 3px;">webring</a
+	> for the tech talent @ Carnegie Mellon University, today and tomorrow
+</h2>
 
-	<div class="row-container">
-		{#each data.users as { name, url, affiliations } (url)}
-			<div class="row">
-				<div class="row__decoration"></div>
-				<span>
-					<a href={url} class="row__url">{url.replace(/https?:\/\//, '')}</a>
-					<span class="row__affiliations">
-						{affiliations
-							.map((a) => {
-								const majorString = Array.isArray(a.major) ? a.major.join(' + ') : a.major;
-								return (
-									a.type +
-									', ' +
-									majorString +
-									" '" +
-									(a.yearOfCompletion % 100).toString().padStart(2, '0')
-								);
-							})
-							.join(' / ')}
-					</span>
-				</span>
-			</div>{/each}
-		<div class="row row--last">
-			CMU Student or Alum? Add your site&nbsp;
-			<a href="https://github.com/ScottyLabs/CMU-loopback">here!</a>
-		</div>
-	</div>
-</section>
+<div class="row-container">
+	{#each data.users as { name, url, affiliations }}
+		<a class="row" href={`//${url}`}>
+			<div class="row__url">{url} <span class="row__arrows">&nbsp;{'>'}</span></div>
+			<div class="row__description">
+				{name} -
+				{affiliations
+					.map((a) => {
+						const majorString = Array.isArray(a.major) ? a.major.join(' + ') : a.major;
+						return (
+							a.type +
+							', ' +
+							majorString +
+							" '" +
+							(a.yearOfCompletion % 100).toString().padStart(2, '0')
+						);
+					})
+					.join(' / ')}
+			</div>
+		</a>
+	{/each}
+</div>
+<a href="https://github.com/ScottyLabs/CMU-loopback" class="join-row">
+	++ CMU Student or Alum? Click here to add your site! ++
+</a>
 
 <style>
-	section {
-		font-family: var(--font-sans);
-	}
-	h1 {
-		margin-top: 70px;
-		font-size: 40px;
-		font-weight: 700;
-		margin-bottom: 0;
-		color: var(--green-400);
-		position: relative;
-	}
-	@property --reveal-amt {
-		syntax: '<percentage>';
-		initial-value: 0%;
-		inherits: false;
+	.card__header {
+		background-color: var(--card-bg-accent);
+		font-family: var(--font-blocky);
+		font-weight: 500;
+		color: var(--card-bg);
+		font-size: 53px;
+		padding: 10px 0;
+		text-align: center;
+		position: sticky;
+		top: 0;
 	}
 
-	.wordmark__mark {
-		position: absolute;
-		left: 0;
-		top: -0.2em;
-		background-color: var(--green-400);
-		color: var(--gray-950);
-		padding-top: 0.2em;
-		mask-image: linear-gradient(
-			to right,
-			black 0%,
-			black var(--reveal-amt),
-			transparent var(--reveal-amt)
-		);
-		animation: 1s reveal forwards cubic-bezier(0, 0, 0.06, 0.99);
-		animation-delay: 0.3s;
-	}
-	@keyframes reveal {
-		100% {
-			--reveal-amt: 100%;
-		}
-	}
-
-	h2 {
-		font-size: 20px;
+	.card__subtitle {
+		font-family: var(--font-heading);
+		color: var(--text);
+		margin-block: 30px;
+		font-size: 18px;
 		font-weight: 300;
-		max-width: 700px;
+		padding-inline: var(--global-x-padding);
 		line-height: 1.4;
-		margin-top: 18px;
-		color: var(--gray-100);
 	}
-
 	.row-container {
-		margin-top: 45px;
-		display: flex;
-		flex-direction: column;
-		gap: 18px;
+		border-top: 1px solid var(--card-border);
 	}
 	.row {
-		position: relative;
-		display: flex;
-		font-size: 20px;
-		.row__decoration {
-			align-self: stretch;
-			width: 4px;
-			background-color: var(--green-400);
-			margin-left: -10px;
-			margin-right: 8px;
+		border-bottom: 1px solid var(--card-border);
+		padding: 25px var(--global-x-padding);
+		display: block;
+		text-decoration: none;
+		.row__arrows {
+			display: inline-block;
+
 			opacity: 0;
-			transition: 0.2s opacity;
+			transform: translate(-7px, 0);
+			transition: 0.2s all;
+		}
+		&:hover {
+			.row__arrows {
+				opacity: 1;
+				transform: translate(0, 0);
+			}
 		}
 
 		.row__url {
-			font-weight: 700;
-			color: var(--gray-100);
-			text-decoration: none;
-			&:visited {
-				color: var(--gray-400);
-			}
-		}
-		.row__affiliations {
-			margin-left: 6px;
-			font-size: 16px;
-			color: var(--gray-200);
-		}
-	}
-	.row--last {
-		margin-top: 6px;
-		font-size: 16px;
-		color: var(--gray-200);
-	}
-	@media screen and (width<=700px) {
-		h1 {
-			margin-top: 40px;
-			font-size: 30px;
-		}
-
-		h2 {
+			font-family: var(--font-heading);
+			color: var(--text-accent);
 			font-size: 20px;
+			font-weight: 700;
+			text-decoration: none;
+		}
+		.row__description {
+			font-family: var(--font-text);
+			margin-top: 10px;
+			font-size: 16px;
+			color: var(--text);
+		}
+	}
+	.join-row {
+		border: 1px solid var(--card-border);
+		padding: 20px var(--global-x-padding);
+		display: block;
+		margin-top: 40px;
+		text-align: center;
+		font-size: 16px;
+		font-family: var(--font-heading);
+		color: var(--text-muted);
+		text-decoration: none;
+		&:hover {
+			color: var(--text);
 		}
 	}
 </style>
